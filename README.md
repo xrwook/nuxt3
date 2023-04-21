@@ -4,6 +4,12 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## yarn version 1.22.19
+
+```bash
+    yarn config set "strict-ssl" false -g
+```
+
 ## Setup
 
 Make sure to install the dependencies:

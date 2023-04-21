@@ -2,7 +2,6 @@
 import { Card, CardBody, CardTitle, CardActions, } from "@progress/kendo-vue-layout";
 import { DropDownList } from '@progress/kendo-vue-dropdowns';
 import { Button } from '@progress/kendo-vue-buttons';
-import useFetchApi from '@/composables/useFetchApi';
 
 interface CardContent {
   title: string;

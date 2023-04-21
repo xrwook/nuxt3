@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineExpose, ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { Button } from '@progress/kendo-vue-buttons';
 import { Card, CardBody } from "@progress/kendo-vue-layout";
 import { useCounter } from '@/stores/counter';
@@ -21,10 +21,6 @@ const minusEvent = (num: number) => {
   count.decrement();
   emit("numResult", result);
 }
-
-defineExpose ({
-  result
-})
 
 
 </script>
