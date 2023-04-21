@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-import SideMenu from '@/components/layout/SideMenu.vue';
-</script>
-
 <template>
   <div>
     <slot name="header">
