@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       BASE_URL: "http://localhost:8080/api",
+      BASE_URL2: "https://jsonplaceholder.typicode.com",
       ENV: "dev"
     }
   },

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { DropDownList } from '@progress/kendo-vue-dropdowns';
 import { Button } from '@progress/kendo-vue-buttons';
-import SamplePage1 from './sample/samplePage1.vue';
+import { useUserInfo } from '@/stores/userInfo';
+
 interface CardContent {
   title: string;
   subtitle: string;
@@ -10,11 +11,17 @@ interface CardContent {
   btn2: string;
 }
 
-interface UserInfo {
+interface UserInfoInf {
   userId: number;
   id: number;
   title: string;
-  completed: false;
+  completed: boolean;
+}
+const defUser: UserInfoInf = {
+  userId: 0,
+  id: 0,
+  title: "",
+  completed: false,
 }
 
 definePageMeta({
@@ -25,6 +32,8 @@ const config = useRuntimeConfig();
 
 let currentLayout = ref("k-card-deck");
 const layoutList: (string | number)[] = ["k-card-list", "k-card-group", "k-card-deck"];
+
+const userinfo = useUserInfo();
 
 const handleChange = (event: any) => {
   currentLayout.value = event.value
@@ -56,8 +65,16 @@ const apiTest = async () => {
       },
     }
   );
-
   console.log(data)
+}
+
+const testLogin = async () => {
+  const { data, error } = await useFetchApi2<UserInfoInf>(
+    "/todos/1", { method: "get", }
+  );
+  const obj: UserInfoInf = data.value || defUser;
+  userinfo.setUserInfo(obj);
+  return data?.value;
 }
 </script>
 
@@ -75,6 +92,14 @@ const apiTest = async () => {
     <v-col>
       <Button theme-color="primary" @click="apiTest">
         api call test2
+      </Button>
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col>
+      <Button theme-color="primary" @click="testLogin">
+        testLogin
       </Button>
     </v-col>
   </v-row>
