@@ -7,4 +7,6 @@ node_modules
 .env
 dist
 .history
+
 yarn.lock
+yarn-error.log
