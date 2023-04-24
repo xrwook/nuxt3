@@ -18,3 +18,5 @@ yarn install 중 에러 발생시 ``` UNABLE_TO_VERIFY_LEAF_SIGNATURE ```
 2. TypeScript Vue Plugin (Volar)
 3. Vue Language Features (Volar)
 
+### IntelliJ EditorConfig 적용
+https://www.jetbrains.com/help/idea/editorconfig.html
