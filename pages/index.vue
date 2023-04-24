@@ -17,12 +17,6 @@ interface UserInfoInf {
   title: string;
   completed: boolean;
 }
-const defUser: UserInfoInf = {
-  userId: 0,
-  id: 0,
-  title: "",
-  completed: false,
-}
 
 definePageMeta({
   layout: "layout-type1"
@@ -72,7 +66,7 @@ const testLogin = async () => {
   const { data, error } = await useFetchApi2<UserInfoInf>(
     "/todos/1", { method: "get", }
   );
-  const obj: UserInfoInf = data.value || defUser;
+  const obj: UserInfoInf = data.value!;
   userinfo.setUserInfo(obj);
   return data?.value;
 }
