@@ -20,7 +20,7 @@ onMounted(async () => {
   inputData.value = "onMounted"
 });
 const computedExample = computed(() => {
-  return ` computed ${result.value}` 
+  return ` computed ${result.value}`
 });
 
 watch(inputData, (newVal, oldVal) => {
@@ -41,7 +41,7 @@ const minusEvent = (num: number) => {
 }
 
 const inputChange = () => {
-
+  console.log("inputData change")
 }
 
 
@@ -66,7 +66,7 @@ const inputChange = () => {
       </v-col>
     </v-row>
   </div>
-  
+
   <div>reslut: {{ result }}</div>
   <div>{{ computedExample }}</div>
 

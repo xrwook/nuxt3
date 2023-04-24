@@ -22,4 +22,9 @@ export const useCounter = defineStore('counter', {
       this.count *= 2
     },
   },
+  getters: {
+    getCount(): string {
+      return `count ===> ${this.count}`
+    }
+  }
 })

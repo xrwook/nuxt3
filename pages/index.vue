@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DropDownList } from '@progress/kendo-vue-dropdowns';
 import { Button } from '@progress/kendo-vue-buttons';
+import SamplePage1 from './sample/samplePage1.vue';
 interface CardContent {
   title: string;
   subtitle: string;

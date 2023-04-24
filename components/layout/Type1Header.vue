@@ -6,7 +6,7 @@ let kendokaAvatar = "https://www.telerik.com/kendo-react-ui-develop/components/i
 const router = useRouter();
 
 const routeEvnt = (path: string) => {
-  router.push({ path: `/${path}` });
+  router.push({ path: `${path}` });
 }
 
 </script>
@@ -28,10 +28,10 @@ const routeEvnt = (path: string) => {
     <AppBarSection>
       <ul>
         <li>
-          <span @click="routeEvnt('samplePage1')">samplePage1</span>
+          <span @click="routeEvnt('/sample/page1')">samplePage1</span>
         </li>
         <li>
-          <span @click="routeEvnt('/')">samplePage2</span>
+          <span @click="routeEvnt('/sample/page2')">samplePage2</span>
         </li>
         <li>
           <span @click="routeEvnt('/')">samplePage3</span>

@@ -6,7 +6,7 @@ export interface UserInfo {
   userId: string;
 }
 
-export const userInfo = defineStore('identity', {
+export const useUserInfo = defineStore('identity', {
   state: (): UserInfo => ({
     name: '',
     auth: '',
@@ -21,7 +21,7 @@ export const userInfo = defineStore('identity', {
   },
   getters: {
     getUserInfo(): string {
-      return `${this.name} ${this.auth} ${this.userId}`
+      return `userInfo ==> ${this.name} ${this.auth} ${this.userId}`
     },
   },
 })
