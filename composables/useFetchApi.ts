@@ -12,20 +12,20 @@ export default async <T>(apiUrl: string, opts?: {
     //  initialCache: false,
     onRequest({ request, options }) {
       options.headers = options.headers || {};
-      console.log(`[useApiReq] : API 요청`);
-      console.log(`[useApiReq] : ${request}`);
+      console.log(`[onRequest] : API 요청`);
+      console.log(`[onRequest] : ${request}`);
     },
     onRequestError({ request, options, error }) {
-      console.log(`[useApiReq] : req 오류 발생`);
+      console.log(`[onRequestError] : req 오류 발생`);
       console.log(error);
     },
     onResponse({ request, response, options }) {
-      console.log(`[useApiReq] : res 완료`);
-      console.log(`[useApiReq] : ${response.status}`);
+      console.log(`[onResponse] : res 완료`);
+      console.log(`[onResponse] : ${response._data}`);
     },
     onResponseError({ request, response, options }) {
-      console.log(`[useApiReq] : res 오류 발생`);
-      console.log(`[useApiReq] : ${response.status}`);
+      console.log(`[onResponseError] : res 오류 발생`);
+      console.log(`[onResponseError] : ${response.status}`);
     },
   }); 
 }

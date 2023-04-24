@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --dotenv .env.dev",
+    "dev": "nuxt dev --port=3000 --dotenv .env.dev",
     "prod": "nuxt dev --dotenv .env.prd",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
