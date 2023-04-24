@@ -50,13 +50,11 @@ const apiTest = async () => {
     {
       method: 'post',
       body: {
-        name: "wook",
-        password: "wook",
-        userId: "wook",
+        password: "admin",
+        userId: "admin",
       },
     }
   );
-
 
   console.log(data)
 }
@@ -94,3 +92,5 @@ const apiTest = async () => {
 </template>
 
 <style scoped></style>
+
+
