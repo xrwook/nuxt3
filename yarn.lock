@@ -511,7 +511,7 @@
   resolved "https://registry.yarnpkg.com/@invictus.codes/nuxt-vuetify/-/nuxt-vuetify-0.2.18.tgz#985af2defdb2b68a5587a513b992eac4290d703d"
   integrity sha512-sTme1/cCxJi3zp47WuG4FGyny7W4VTceuP096Yqmn1JQaVtzILUDAtFd88QGDvRoceJdAMz/weo/PyPIO/G0TA==
   dependencies:
-    "@invictus.codes/nuxt-vuetify" "link:./C:/Users/user/AppData/Local/Yarn/Cache/v6/npm-@invictus-codes-nuxt-vuetify-0.2.18-985af2defdb2b68a5587a513b992eac4290d703d-integrity/node_modules/@invictus.codes/nuxt-vuetify"
+    "@invictus.codes/nuxt-vuetify" "link:./../../../../AppData/Local/Yarn/Cache/v6/npm-@invictus-codes-nuxt-vuetify-0.2.18-985af2defdb2b68a5587a513b992eac4290d703d-integrity/node_modules/@invictus.codes/nuxt-vuetify"
     "@nuxt/kit" "^3.3.2"
     defu "^6.1.2"
     vite-plugin-vuetify "^1.0.2"

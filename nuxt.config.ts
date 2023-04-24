@@ -3,17 +3,17 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      BASE_URL: "http://10.131.158.134:9998/api",
+      BASE_URL: "http://localhost:8080/api",
       ENV: "dev"
     }
   },
   app: {
   },
   css: [
-    "@progress/kendo-theme-default/dist/all.css",
+    // "@progress/kendo-theme-default/dist/all.css",
     "~/assets/styles/app.scss",
     "~/assets/styles/all.css",
-    "vuetify/lib/styles/main.sass"
+    // "vuetify/lib/styles/main.sass"
   ],
   ssr: false,
   pages: true,
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@invictus.codes/nuxt-vuetify',
   ],
-  
+
   nitro: {
     //dev proxy ssr작동안함
     devProxy: {
