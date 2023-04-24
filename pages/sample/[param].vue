@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  const test = useRoute().params
+  const router = useRoute().params
 </script>
 
 <template>
   <div>
-    <h1>{{ test }}</h1>
+    <h1>{{ router.param }}</h1>
   </div>
 </template>
 
