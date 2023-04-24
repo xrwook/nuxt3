@@ -3,7 +3,6 @@ export default async <T>(apiUrl: string, opts?: {
   params?: URLSearchParams | undefined, 
   body?: BodyInit | Record<string, any> | null | undefined
 }) => {
-  //useFetch is a wrapper for $fetch
   const config = useRuntimeConfig();
   return useFetch(apiUrl, {
     baseURL: config.public.BASE_URL,
