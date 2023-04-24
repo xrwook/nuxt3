@@ -18,20 +18,16 @@ interface UserInfoInf {
   completed: boolean;
 }
 
+// compiler macro
 definePageMeta({
   layout: "layout-type1"
 })
 
-const config = useRuntimeConfig();
-
+// const
 let currentLayout = ref("k-card-deck");
 const layoutList: (string | number)[] = ["k-card-list", "k-card-group", "k-card-deck"];
-
 const userinfo = useUserInfo();
-
-const handleChange = (event: any) => {
-  currentLayout.value = event.value
-}
+const btnClickString = ref("")
 
 const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   return {
@@ -44,10 +40,15 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
 });
 
 
-const btnClickString = ref("")
+//method
+const handleChange = (event: any) => {
+  currentLayout.value = event.value
+}
+
 const bntClick = (str: string) => {
   btnClickString.value = str;
 }
+
 const apiTest = async () => {
   const { data, error } = await useFetchApi(
     "/common/auth/signin",
@@ -62,14 +63,15 @@ const apiTest = async () => {
   console.log(data)
 }
 
-const testLogin = async () => {
-  const { data, error } = await useFetchApi2<UserInfoInf>(
-    "/todos/1", { method: "get", }
-  );
-  const obj: UserInfoInf = data.value!;
-  userinfo.setUserInfo(obj);
-  return data?.value;
+const apiCall = async (): Promise<UserInfoInf> => {
+  const { data, error } = await useFetchApi2<UserInfoInf>( "/todos/1", { method: "get", } );
+  return data?.value!;
 }
+const testLogin = async () => {
+  const result: UserInfoInf = await apiCall();
+  userinfo.setUserInfo(result);
+}
+
 </script>
 
 
