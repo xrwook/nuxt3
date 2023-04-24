@@ -15,17 +15,13 @@ const userInfo = useUserInfo();
 
 <template>
   <div>
-    <v-row>
-      <v-col :cols="6">
-        <Card>
-          <CardBody>
-            <h1>store Data</h1>
-            <div>{{ userInfo.getUserInfo }}</div>
-            <div>{{ counter.getCount }}</div>
-          </CardBody>
-        </Card>
-      </v-col>
-    </v-row>
+    <Card>
+      <CardBody>
+        <h1>store Data</h1>
+        <div>{{ userInfo.getUserInfo }}</div>
+        <div>{{ counter.getCount }}</div>
+      </CardBody>
+    </Card>
   </div>
 
 

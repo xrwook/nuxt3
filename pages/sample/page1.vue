@@ -12,8 +12,10 @@ definePageMeta({
 })
 
 const count = useCounter();
-const result = ref(0)
+const result = ref(0);
 const inputData = ref("inputData");
+const routePath = ref("default");
+const router = useRouter();
 
 //state
 onMounted(async () => {
@@ -26,7 +28,7 @@ const computedExample = computed(() => {
 watch(inputData, (newVal, oldVal) => {
   console.log(`newVal => ${newVal}`)
   console.log(`oldVal => ${oldVal}`)
-})
+});
 
 //method
 const plusEvent = (num: number) => {
@@ -40,43 +42,56 @@ const minusEvent = (num: number) => {
   emit("numResult", result);
 }
 
-const inputChange = () => {
-  console.log("inputData change")
+const inputChange = (e: any): string => {
+  return e.value;
 }
 
+const dynamicRouteParams = (param: any) => {
+  routePath.value = param?.value;
+}
+
+const dynamicRouteMove = () => {
+  router.push({ path: `/sample/${routePath.value}` });
+}
 
 </script>
 
 <template>
   <div>
-    <v-row>
-      <v-col :cols="6">
-        <Card>
-          <CardBody>
-            <Button
-              :theme-color="'primary'"
-              @click="plusEvent(1)"
-            >++</Button>
-            <Button
-              :theme-color="'primary'"
-              @click="minusEvent(1)"
-            >--</Button>
-          </CardBody>
-        </Card>
-      </v-col>
-    </v-row>
+    <Card>
+      <CardBody>
+        <Button :theme-color="'primary'" @click="plusEvent(1)">++</Button>
+        <Button :theme-color="'primary'" @click="minusEvent(1)">--</Button>
+      </CardBody>
+    </Card>
   </div>
 
-  <div>reslut: {{ result }}</div>
-  <div>{{ computedExample }}</div>
+  <Card>
+    <CardBody>
+      <div>reslut: {{ result }}</div>
+      <div>{{ computedExample }}</div>
+    </CardBody>
+  </Card>
 
-  <div>
-    watch example
-    <Input
-      v-model="inputData"
-      @change="inputChange"
-    ></Input>
-  </div>
+  <Card>
+    <CardBody>
+      <div>
+        watch example
+        <Input v-model="inputData" @change="inputChange"></Input>
+      </div>
+    </CardBody>
+  </Card>
+
+  <Card>
+    <CardBody>
+      <div>
+        dynamic route
+        <Input v-model="routePath" @change="dynamicRouteParams"></Input>
+        <Button :theme-color="'primary'" @click="dynamicRouteMove">dynamic route move</Button>
+      </div>
+    </CardBody>
+  </Card>
+
 
 
 </template>
