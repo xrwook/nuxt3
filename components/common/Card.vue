@@ -32,7 +32,7 @@ const bntClick = (type: string) => {
 
 <template>
   <div>
-    <Card style="width: 200px">
+    <Card style="width: 230px">
       <CardBody>
         <CardTitle>{{ title }}</CardTitle>
         <CardTitle>{{ subtitle }}</CardTitle>

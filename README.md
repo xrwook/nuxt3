@@ -1,44 +1,20 @@
-# Nuxt 3 Minimal Starter
+# 프로젝트 ReadMe
 
-# Node version 18.16.0 LTS
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## yarn version 1.22.19
+### Node version 18.16.0 LTS
+### yarn version 1.22.19
 
 ```bash
-    yarn config set "strict-ssl" false -g
+  yarn install
 ```
 
-## Setup
 
-Make sure to install the dependencies:
-
+yarn install 중 에러 발생시 ``` UNABLE_TO_VERIFY_LEAF_SIGNATURE ```
 ```bash
-# yarn
-yarn install
+  yarn config set "strict-ssl" false -g
 ```
 
-## Development Server
+### 필수 vsCode extension
+1. EditorConfig for VS Code
+2. TypeScript Vue Plugin (Volar)
+3. Vue Language Features (Volar)
 
-Start the development server on http://localhost:3000
-
-```bash
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

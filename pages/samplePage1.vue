@@ -3,14 +3,32 @@ import { ref, onMounted } from 'vue';
 import { Button } from '@progress/kendo-vue-buttons';
 import { Card, CardBody } from "@progress/kendo-vue-layout";
 import { useCounter } from '@/stores/counter';
+import { Input } from '@progress/kendo-vue-inputs';
 
 const emit = defineEmits(['numResult'])
 
 definePageMeta({
   layout: "layout-type2"
 })
+
 const count = useCounter();
 const result = ref(0)
+const inputData = ref("inputData");
+
+//state
+onMounted(async () => {
+  inputData.value = "onMounted"
+});
+const computedExample = computed(() => {
+  return ` computed ${result.value}` 
+});
+
+watch(inputData, (newVal, oldVal) => {
+  console.log(`newVal => ${newVal}`)
+  console.log(`oldVal => ${oldVal}`)
+})
+
+//method
 const plusEvent = (num: number) => {
   result.value = result.value + num;
   count.increment();
@@ -20,6 +38,10 @@ const minusEvent = (num: number) => {
   result.value = result.value - num;
   count.decrement();
   emit("numResult", result);
+}
+
+const inputChange = () => {
+
 }
 
 
@@ -46,6 +68,17 @@ const minusEvent = (num: number) => {
   </div>
   
   <div>reslut: {{ result }}</div>
+  <div>{{ computedExample }}</div>
+
+  <div>
+    watch example
+    <Input
+      v-model="inputData"
+      @change="inputChange"
+    ></Input>
+  </div>
+
+
 </template>
 
 <style lang="scss" scoped></style>

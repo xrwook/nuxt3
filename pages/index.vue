@@ -33,25 +33,12 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   return {
     title: `title ${idx}`,
     subtitle: `subtitle ${idx}`,
-    content: `card example content ${idx}card example content ${idx}card example content ${idx}card example content ${idx}card example content ${idx}card example content ${idx}`,
+    content: `card example content ${idx} card example content ${idx} card example content ${idx} card example content ${idx} card example content ${idx} card example content ${idx} card example content ${idx}`,
     btn1: `btn1 ${idx}`,
     btn2: `btn2 ${idx}`,
   }
 });
 
-onMounted(async () => {
-  // const {data, error} = await useFetchApi(
-  //   "/authenticate",
-  //   {
-  //     method: 'post',
-  //     body: {
-  //       password: "admin",
-  //       userId: "admin",
-  //     },
-  //   }
-  // );
-  // console.log(data)
-});
 
 const btnClickString = ref("")
 const bntClick = (str: string) => {
@@ -59,12 +46,13 @@ const bntClick = (str: string) => {
 }
 const apiTest = async () => {
   const { data, error } = await useFetchApi(
-    "/authenticate",
+    "/common/auth/signin",
     {
       method: 'post',
       body: {
-        password: "admin",
-        username: "admin",
+        name: "wook",
+        password: "wook",
+        userId: "wook",
       },
     }
   );

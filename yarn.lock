@@ -517,7 +517,7 @@
     vite-plugin-vuetify "^1.0.2"
     vuetify "^3.1.12"
 
-"@invictus.codes/nuxt-vuetify@link:.":
+"@invictus.codes/nuxt-vuetify@link:./C:/Users/user/AppData/Local/Yarn/Cache/v6/npm-@invictus-codes-nuxt-vuetify-0.2.18-985af2defdb2b68a5587a513b992eac4290d703d-integrity/node_modules/@invictus.codes/nuxt-vuetify":
   version "0.0.0"
   uid ""
 
