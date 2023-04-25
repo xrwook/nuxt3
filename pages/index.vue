@@ -41,7 +41,7 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
 });
 
 const asd : GlobalInf = {a: "1", b:"2"}
-const aaa: string = GlobalEnum.a;
+// const aaa: string = GlobalEnum.a;
 
 //method
 const handleChange = (event: any) => {
