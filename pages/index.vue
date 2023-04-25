@@ -15,7 +15,8 @@ interface UserInfoInf {
   userId: number;
   id: number;
   title: string;
-  completed: boolean;
+  completed?: boolean;
+  [propName: string]: any;
 }
 
 // compiler macro
@@ -39,6 +40,8 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   }
 });
 
+const asd : GlobalInf = {a: "1", b:"2"}
+const aaa: string = GlobalEnum.a;
 
 //method
 const handleChange = (event: any) => {
@@ -65,10 +68,11 @@ const apiTest = async () => {
 
 const apiCall = async (): Promise<UserInfoInf> => {
   const { data, error } = await useFetchApi2<UserInfoInf>( "/todos/1", { method: "get", } );
-  return data?.value!;
+  return data?.value as UserInfoInf;
 }
 const testLogin = async () => {
   const result: UserInfoInf = await apiCall();
+  console.log(result)
   userinfo.setUserInfo(result);
 }
 

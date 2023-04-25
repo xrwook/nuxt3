@@ -2,6 +2,7 @@
 import { AppConfigInput } from '@nuxt/schema'
 import p from '../../package.json'
 import { AppBar, AppBarSection, AppBarSpacer } from "@progress/kendo-vue-layout";
+// Type Assertion
 const app = useAppConfig() as AppConfigInput
 const icons: string[] = [
   'mdi-facebook',

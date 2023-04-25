@@ -4,7 +4,7 @@ export interface UserInfo {
   userId: number;
   id: number;
   title: string;
-  completed: boolean;
+  completed?: boolean;
 }
 
 export const useUserInfo = defineStore('userInfo', {
