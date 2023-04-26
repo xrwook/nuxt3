@@ -2,28 +2,14 @@
 import { Card, CardBody, CardTitle, CardActions, } from "@progress/kendo-vue-layout";
 import { Button } from '@progress/kendo-vue-buttons';
 
-const props = defineProps({
-  title: {
-    type: String,
-    default: "",
-  },
-  subtitle: {
-    type: String,
-    default: "",
-  },
-  content: {
-    type: String,
-    default: "",
-  },
-  btn1: {
-    type: String,
-    default: "",
-  },
-  btn2: {
-    type: String,
-    default: "",
-  }
-});
+interface CardProps {
+  title: string;
+  subtitle: string;
+  content: string;
+  btn1: string;
+  btn2: string;
+}
+const props = defineProps<CardProps>();
 const emit = defineEmits(['bntClick'])
 const bntClick = (type: string) => {
   emit("bntClick", type);
@@ -39,15 +25,15 @@ const bntClick = (type: string) => {
         <p>{{ content }}</p>
       </CardBody>
       <CardActions>
-        <Button 
-          fill-mode="flat" 
+        <Button
+          fill-mode="flat"
           theme-color="primary"
           @click="bntClick(`btn1 ${title}`)"
         >
           {{ btn1 }}
         </Button>
-        <Button 
-          fill-mode="flat" 
+        <Button
+          fill-mode="flat"
           theme-color="primary"
           @click="bntClick(`btn2 ${subtitle}`)"
         >

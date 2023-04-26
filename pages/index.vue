@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { DropDownList } from '@progress/kendo-vue-dropdowns';
 import { Button } from '@progress/kendo-vue-buttons';
-import { useUserInfo } from '@/stores/userInfo';
 
 interface CardContent {
   title: string;
@@ -19,9 +18,9 @@ definePageMeta({
 // const
 let currentLayout = ref("k-card-deck");
 const layoutList: (string | number)[] = ["k-card-list", "k-card-group", "k-card-deck"];
-const userinfo = useUserInfo();
 const btnClickString = ref("")
-const userProps = ref()
+const comboValue = ref("");
+const comboItems: {}[] = [{id:"1", text:"1"},{id:"2", text:"2"},{id:"3", text:"3"}];
 
 const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   return {
@@ -33,8 +32,7 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   }
 });
 
-const asd : GlobalInf = {a: "1", b:"2"}
-// const aaa: string = GlobalEnum.a;
+const globalinf : GlobalInf = {a: "1", b:"2"}
 
 //method
 const handleChange = (event: any) => {
@@ -59,18 +57,6 @@ const apiTest = async () => {
   console.log(data)
 }
 
-// const apiCall = async (): Promise<UserInfoInf> => {
-//   const { data, error } = await useFetchApi2<UserInfoInf>( `/todos/${Math.round(Math.random()*100)}`, { method: "get", } );
-//   return data.value as UserInfoInf;
-// }
-
-// const testLogin = async () => {
-//   const result: UserInfoInf = await apiCall();
-//   result.isLogin = true;
-//   userinfo.setUserInfo(result);
-//   userProps.value = result;
-// }
-
 </script>
 
 
@@ -93,6 +79,16 @@ const apiTest = async () => {
       <Button theme-color="primary" @click="apiTest">
         api call test2
       </Button>
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col>
+      comboValue : {{ comboValue }}
+      <CommonCombo
+        v-model="comboValue"
+        :items="comboItems"
+      />
     </v-col>
   </v-row>
 
