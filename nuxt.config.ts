@@ -3,9 +3,8 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      BASE_URL: "http://localhost:8080/api",
-      BASE_URL2: "https://jsonplaceholder.typicode.com",
-      ENV: "dev"
+      baseUrl: "",
+      baseUrl2: ""
     }
   },
   app: {
@@ -21,7 +20,7 @@ export default defineNuxtConfig({
   components: true,
   modules: [
     '@pinia/nuxt',
-    '@invictus.codes/nuxt-vuetify',
+    '@invictus.codes/nuxt-vuetify'
   ],
 
   nitro: {

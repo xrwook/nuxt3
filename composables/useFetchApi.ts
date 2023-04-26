@@ -5,7 +5,7 @@ export default async <T>(apiUrl: string, opts?: {
 }) => {
   const config = useRuntimeConfig();
   return useFetch<T>(apiUrl, {
-    baseURL: config.public.BASE_URL,
+    baseURL: config.public.baseUrl,
     method: opts?.method,
     params: opts?.params,
     body: opts?.body,
