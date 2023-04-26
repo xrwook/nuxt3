@@ -47,12 +47,12 @@ const bntClick = (str: string) => {
 
 const apiTest = async () => {
   const { data, error } = await useFetchApi(
-    "/common/auth/signin",
+    "/authenticate",
     {
       method: 'post',
       body: {
         password: "admin",
-        userId: "admin",
+        username: "admin",
       },
     }
   );
