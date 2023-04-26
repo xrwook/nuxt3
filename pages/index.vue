@@ -111,8 +111,14 @@ const testLogin = async () => {
   </v-row>
   <div :class="currentLayout">
     <div v-for="(item, idx) in cardList" :key="idx">
-      <CommonCard :title="item.title" :subtitle="item.subtitle" :content="item.content" :btn1="item.btn1"
-        :btn2="item.btn2" @bntClick="bntClick" />
+      <CommonCard
+        :title="item.title"
+        :subtitle="item.subtitle"
+        :content="item.content"
+        :btn1="item.btn1"
+        :btn2="item.btn2"
+        @bntClick="bntClick"
+      />
     </div>
   </div>
 </template>
