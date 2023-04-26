@@ -33,8 +33,6 @@ const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   }
 });
 
-const globalinf : GlobalInf = {a: "1", b:"2"}
-
 //method
 const handleChange = (event: any) => {
   currentLayout.value = event.value
