@@ -26,7 +26,7 @@ const routeEvnt = (path: string) => {
     <AppBarSpacer :width="32" />
 
     <AppBarSection>
-      <ul>
+      <ul class="ul-class">
         <li>
           <span @click="routeEvnt('/sample/page1')">samplePage1</span>
         </li>
@@ -60,34 +60,6 @@ const routeEvnt = (path: string) => {
     </AppBarSection>
   </AppBar>
 </template>
+
 <style scoped>
-.title {
-  font-size: 18px;
-  margin: 0;
-}
-
-ul {
-  font-size: 14px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-li {
-  margin: 0 10px;
-}
-
-li:hover {
-  cursor: pointer;
-  color: #84cef1;
-}
-
-.k-button k-button-md k-rounded-md k-button-solid k-button-solid-base {
-  padding: 0;
-}
-
-.k-badge-container {
-  margin-right: 8px;
-}
 </style>

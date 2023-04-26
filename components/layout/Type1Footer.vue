@@ -16,7 +16,7 @@ const icons: string[] = [
   <AppBar :theme-color="'dark'">
     <AppBarSpacer :width="150" />
     <AppBarSection>
-      <ul>
+      <ul class="ul-class">
         <li>
           <span>1. {{ app.name }}</span>
         </li>
@@ -40,33 +40,4 @@ const icons: string[] = [
 </template>
 
 <style scoped>
-.title {
-  font-size: 18px;
-  margin: 0;
-}
-
-ul {
-  font-size: 14px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-li {
-  margin: 0 10px;
-}
-
-li:hover {
-  cursor: pointer;
-  color: #84cef1;
-}
-
-.k-button k-button-md k-rounded-md k-button-solid k-button-solid-base {
-  padding: 0;
-}
-
-.k-badge-container {
-  margin-right: 8px;
-}
 </style>

@@ -51612,3 +51612,33 @@ div.k-scrollview.k-scrollview-light .k-scrollview-nav-wrap {
 .k-signature .k-signature-line {
   border-bottom-color: rgba(0, 88, 233, 0.24);
 }
+
+.title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.ul-class {
+  font-size: 14px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.ul-class li {
+  margin: 0 10px;
+}
+
+li:hover {
+  cursor: pointer;
+  color: #84cef1;
+}
+
+.k-button k-button-md k-rounded-md k-button-solid k-button-solid-base {
+  padding: 0;
+}
+
+.k-badge-container {
+  margin-right: 8px;
+}
