@@ -3,11 +3,10 @@ import { AppBar, AppBarSection, AppBarSpacer, Avatar, } from "@progress/kendo-vu
 import { Button } from "@progress/kendo-vue-buttons";
 import { BadgeContainer } from "@progress/kendo-vue-indicators";
 let kendokaAvatar = "https://www.telerik.com/kendo-react-ui-develop/components/images/kendoka-react.png";
-const router = useRouter();
+import { useUserInfo } from '@/stores/userInfo';
 
-const routeEvnt = (path: string) => {
-  router.push({ path: `${path}` });
-}
+const userInfo = useUserInfo();
+const { logout } = useAuth();
 
 </script>
 
@@ -28,13 +27,19 @@ const routeEvnt = (path: string) => {
     <AppBarSection>
       <ul class="ul-class">
         <li>
-          <span @click="routeEvnt('/sample/page1')">samplePage1</span>
+          <CommonPageLink to="/sample/page1">samplePage1</CommonPageLink>
         </li>
         <li>
-          <span @click="routeEvnt('/sample/page2')">samplePage2</span>
+          <CommonPageLink to="/sample/page2">samplePage2 auth</CommonPageLink>
         </li>
         <li>
-          <span @click="routeEvnt('/')">samplePage3</span>
+          <CommonPageLink to="/">samplePage3</CommonPageLink>
+        </li>
+        <li v-if="!userInfo.isLogin">
+          <CommonPageLink to="/Login">Login</CommonPageLink>
+        </li>
+        <li v-if="userInfo.isLogin">
+          <Button @click="logout" >logout</Button>
         </li>
       </ul>
     </AppBarSection>

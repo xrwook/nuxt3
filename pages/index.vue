@@ -11,17 +11,9 @@ interface CardContent {
   btn2: string;
 }
 
-interface UserInfoInf {
-  userId: number;
-  id: number;
-  title: string;
-  completed?: boolean;
-  [propName: string]: any;
-}
-
 // compiler macro
 definePageMeta({
-  layout: "layout-type1"
+  layout: "layout-type1",
 })
 
 // const
@@ -29,6 +21,7 @@ let currentLayout = ref("k-card-deck");
 const layoutList: (string | number)[] = ["k-card-list", "k-card-group", "k-card-deck"];
 const userinfo = useUserInfo();
 const btnClickString = ref("")
+const userProps = ref()
 
 const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   return {
@@ -66,15 +59,17 @@ const apiTest = async () => {
   console.log(data)
 }
 
-const apiCall = async (): Promise<UserInfoInf> => {
-  const { data, error } = await useFetchApi2<UserInfoInf>( "/todos/1", { method: "get", } );
-  return data?.value as UserInfoInf;
-}
-const testLogin = async () => {
-  const result: UserInfoInf = await apiCall();
-  console.log(result)
-  userinfo.setUserInfo(result);
-}
+// const apiCall = async (): Promise<UserInfoInf> => {
+//   const { data, error } = await useFetchApi2<UserInfoInf>( `/todos/${Math.round(Math.random()*100)}`, { method: "get", } );
+//   return data.value as UserInfoInf;
+// }
+
+// const testLogin = async () => {
+//   const result: UserInfoInf = await apiCall();
+//   result.isLogin = true;
+//   userinfo.setUserInfo(result);
+//   userProps.value = result;
+// }
 
 </script>
 
@@ -82,8 +77,13 @@ const testLogin = async () => {
 <template>
   <div class="example-config">
     <h6>Change taps position: {{ currentLayout }}</h6>
-    <DropDownList :style="{ width: '230px' }" :data-items='layoutList' :default-value="'k-card-deck'"
-      @change="handleChange" />
+    <NuxtLink to="/sample/page1">Home</NuxtLink>
+    <DropDownList
+      :style="{ width: '230px' }"
+      :data-items='layoutList'
+      :default-value="'k-card-deck'"
+      @change="handleChange"
+    />
   </div>
   <hr />
   <div></div>
@@ -92,14 +92,6 @@ const testLogin = async () => {
     <v-col>
       <Button theme-color="primary" @click="apiTest">
         api call test2
-      </Button>
-    </v-col>
-  </v-row>
-
-  <v-row>
-    <v-col>
-      <Button theme-color="primary" @click="testLogin">
-        testLogin
       </Button>
     </v-col>
   </v-row>

@@ -4,7 +4,8 @@ import { useCounter } from '@/stores/counter';
 import { useUserInfo } from '@/stores/userInfo';
 
 definePageMeta({
-  layout: "layout-type2"
+  layout: "layout-type2",
+  middleware: 'auth'
 })
 
 const counter = useCounter();

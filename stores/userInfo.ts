@@ -1,30 +1,29 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export interface UserInfo {
-  userId: number;
-  id: number;
-  title: string;
-  completed?: boolean;
-}
-
-export const useUserInfo = defineStore('userInfo', {
-  state: (): UserInfo => ({
-    userId: 0,
+export const useUserInfo = defineStore("userInfo", {
+  state: (): UserInfoInf => ({
     id: 0,
-    title: "",
-    completed: false,
+    username: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    gender: "",
+    isLogin: false,
   }),
   actions: {
-    setUserInfo(user: UserInfo){
-      this.userId = user.userId;
+    setUserInfo(user: UserInfoInf) {
       this.id = user.id;
-      this.title = user.title;
-      this.completed = user.completed;
-    }
+      this.username = user.username;
+      this.email = user.email;
+      this.firstName = user.firstName;
+      this.lastName = user.lastName;
+      this.gender = user.gender;
+      this.isLogin = user.isLogin;
+    },
   },
   getters: {
     getUserInfo(): string {
-      return `userInfo ==> ${this.userId} ${this.id}  title: ${this.title}`
+      return `userInfo ==>  ${this.id}  `;
     },
   },
-})
+});
