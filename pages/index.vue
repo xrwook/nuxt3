@@ -21,6 +21,7 @@ const layoutList: (string | number)[] = ["k-card-list", "k-card-group", "k-card-
 const btnClickString = ref("")
 const comboValue = ref("");
 const comboItems: {}[] = [{id:"1", text:"1"},{id:"2", text:"2"},{id:"3", text:"3"}];
+const checkValue = ref(false)
 
 const cardList: Array<CardContent> = [...Array(6)].map((x, idx) => {
   return {
@@ -57,6 +58,9 @@ const apiTest = async () => {
   console.log(data)
 }
 
+const comboChange = (e: any) => {
+
+}
 </script>
 
 
@@ -88,6 +92,18 @@ const apiTest = async () => {
       <CommonCombo
         v-model="comboValue"
         :items="comboItems"
+        @comboChange="comboChange"
+      />
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col>
+      checkBox : {{ checkValue }}
+      <CommonCheckBox
+        v-model="checkValue"
+        label="checkbox"
+
       />
     </v-col>
   </v-row>

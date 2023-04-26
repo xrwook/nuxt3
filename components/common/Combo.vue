@@ -13,13 +13,14 @@ const props = withDefaults(defineProps<ComboProps>(), {
   items: () => [],
   textFiled: "text",
   keyFiled: "id"
-})
+});
 
 const value = ref({})
-const emit = defineEmits(["update:modelValue"])
+const emit = defineEmits(["update:modelValue", "comboChange"])
 const change = (e: any) => {
   value.value = e.value;
-  emit("update:modelValue", e.value[props.keyFiled])
+  emit("update:modelValue", e.value[props.keyFiled]);
+  emit("comboChange", e);
 }
 </script>
 

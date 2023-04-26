@@ -3,11 +3,11 @@ import { Card, CardBody, CardTitle, CardActions, } from "@progress/kendo-vue-lay
 import { Button } from '@progress/kendo-vue-buttons';
 
 interface CardProps {
-  title: string;
-  subtitle: string;
-  content: string;
-  btn1: string;
-  btn2: string;
+  title?: string;
+  subtitle?: string;
+  content?: string;
+  btn1?: string;
+  btn2?: string;
 }
 const props = defineProps<CardProps>();
 const emit = defineEmits(['bntClick'])
