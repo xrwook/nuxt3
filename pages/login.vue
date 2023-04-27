@@ -30,7 +30,7 @@ const onLoginClick = async() => {
     <div class="main-wrap">
       <header>
         <div class="logo-wrap">
-          <img src="@/assets/images/github-icon.svg">
+          <img src="@/assets/images/favicon.png">
         </div>
       </header>
       <section class="login-input-section-wrap">
@@ -83,7 +83,7 @@ const onLoginClick = async() => {
 
 .main-container .main-wrap .logo-wrap {
   padding-top: 55px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 2, 2);
 }
 
 .main-container .main-wrap .logo-wrap img {
