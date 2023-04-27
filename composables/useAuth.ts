@@ -3,8 +3,8 @@ const userInfo = useUserInfo();
 
 export const useAuth = () => {
   const login = async (
-    username: string = "kminchelle",
-    password: string = "0lelplR"
+    username: string = "",
+    password: string = ""
   ): Promise<UserInfoInf> => {
     const { data, error } = await useFetchApi2("/auth/login", {
       method: "post",

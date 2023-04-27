@@ -1,4 +1,4 @@
-export default async <T>(apiUrl: string, opts?: {
+export default async <T>(apiUrl: string, opts: {
   method: "GET" | "HEAD" | "PATCH" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "get" | "head" | "patch" | "post" | "put" | "delete" | "connect" | "options" | "trace" ,
   params?: URLSearchParams | undefined,
   body?: BodyInit | Record<string, any> | null | undefined
@@ -6,7 +6,7 @@ export default async <T>(apiUrl: string, opts?: {
   const config = useRuntimeConfig();
   return useFetch<T>(apiUrl, {
     baseURL: config.public.baseUrl,
-    method: opts?.method,
+    method: opts.method,
     params: opts?.params,
     body: opts?.body,
     //  initialCache: false,
