@@ -7,10 +7,24 @@
   yarn install
 ```
 
-
 yarn install 중 에러 발생시 ``` UNABLE_TO_VERIFY_LEAF_SIGNATURE ```
 ```bash
   yarn config set "strict-ssl" false -g
+```
+
+로컬용으로 실행 
+```bash
+  yarn local
+```
+
+개발계로 실행
+```bash
+  yarn dev
+```
+
+운용계로 실행
+```bash
+  yarn prod
 ```
 
 ### 필수 vsCode extension

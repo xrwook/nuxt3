@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    buildAssetsDir: '_nuxt',
+    head: {
+      title: "롯데 데이터마켓플레이스",
+      htmlAttrs: { dir: 'rtl', lang: 'fa' },
+      link: [{ rel: 'icon', type: 'image/png', href: "/_nuxt/assets/images/favicon.png" }]
+    },
   },
   css: [
     // "@progress/kendo-theme-default/dist/all.css",
@@ -25,13 +31,13 @@ export default defineNuxtConfig({
 
   nitro: {
     //dev proxy ssr작동안함
-    devProxy: {
+    // devProxy: {
       // "/api": {
       //   target:"10.131.158.134:9998/api",
       //   changeOrigin: true,
       //   prependPath: true,
       // }
-    },
+    // },
     // devProxy: {
     //   "/api": {
     //     target: useRuntimeConfig(),
