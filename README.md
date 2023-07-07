@@ -35,5 +35,8 @@ yarn install 중 에러 발생시 ``` UNABLE_TO_VERIFY_LEAF_SIGNATURE ```
 ### IntelliJ EditorConfig 적용
 https://www.jetbrains.com/help/idea/editorconfig.html
 
+### vscode extensions 백업
+code --list-extensions > extensions.list
+
 ### vscode extensions 설치
 cat extensions.list |% {code --install-extensions $_}
